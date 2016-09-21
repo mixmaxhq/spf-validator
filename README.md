@@ -24,4 +24,5 @@ validator.hasRecords((err, hasRecords) => console.log(hasRecords));
 
 
 ## Changelog
+0.2.0 - Make sure we don't have errors when a domain isn't registered or doesn't have any TXT records.
 0.1.0 - Constructor and hasRecords()
