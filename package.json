@@ -1,0 +1,31 @@
+{
+  "name": "spf-validator",
+  "version": "0.0.0",
+  "description": "Used to validate SPF records",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mixmaxhq/spf-validator.git"
+  },
+  "keywords": [
+    "spf",
+    "dns"
+  ],
+  "author": "Trey Tacon <trey@mixmax.com> (https://mixmax.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mixmaxhq/spf-validator/issues"
+  },
+  "homepage": "https://github.com/mixmaxhq/spf-validator#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2"
+  },
+  "dependencies": {
+    "synchronize": "^2.0.0",
+    "underscore": "^1.8.3"
+  }
+}
