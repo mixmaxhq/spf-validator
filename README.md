@@ -20,3 +20,8 @@ We can then see if this domain has any SPF records setup.
 ```js
 var hasSPFRecords = validator.hasRecords();
 ```
+
+
+
+## Changelog
+0.1.0 - Constructor and hasRecords()

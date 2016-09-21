@@ -1,6 +1,6 @@
 {
   "name": "spf-validator",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Used to validate SPF records",
   "main": "index.js",
   "scripts": {
