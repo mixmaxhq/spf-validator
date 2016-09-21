@@ -19,8 +19,15 @@ Object.assign(SPFValidator.prototype, {
    */
   hasRecords: function(done) {
       dns.resolveTxt(this._domain, function(err, vals) {
-        if (err) done(err);
-        else {
+        if (err) {
+          // If the domain isn't registered, if most certainly doesn't have SPF
+          // records.
+          if (/queryTxt ENOTFOUND/.test(err)) done(null, false);
+          // ENODATA means the domain exists but with no TXT records, so it
+          // can't have SPF records.
+          else if (/queryTxt ENODATA/.test(err)) done(null, false);
+          else done(err);
+        } else {
           done(null, _.chain(vals)
             .flatten()
             .some(function(record) {

@@ -11,5 +11,21 @@ describe('spf-validator', function() {
         done();
       });
     });
+
+    it('should return false for invalid domains', function(done) {
+      (new SPFValidator('not.a.real.domain')).hasRecords(function(err, val) {
+        expect(err).to.be.null;
+        expect(val).to.be.false;
+        done();
+      });
+    });
+
+    it('should return false for a domain without TXT records', function(done) {
+      (new SPFValidator('treytacon.com')).hasRecords(function(err, val) {
+        expect(err).to.be.null;
+        expect(val).to.be.false;
+        done();
+      });
+    });
   });
 });
