@@ -4,7 +4,8 @@
   "description": "Used to validate SPF records",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,15 @@
   "homepage": "https://github.com/mixmaxhq/spf-validator#readme",
   "devDependencies": {
     "chai": "^3.5.0",
-    "mocha": "^3.0.2"
+    "eslint": ">=3",
+    "eslint-config-mixmax": "^0.6.0",
+    "mocha": "^3.0.2",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "underscore": "^1.8.3"
-  }
+  },
+  "pre-commit": [
+    "lint"
+  ]
 }
