@@ -4,7 +4,7 @@ This module wraps utilities for checking and validating SPF records.
 ## Install
 
 ```
-$ yarn add spf-validator
+$ npm install spf-validator
 ```
 or
 ```
