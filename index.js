@@ -17,7 +17,7 @@ Object.assign(SPFValidator.prototype, {
    * @param  {Function} done Node style callback.
    * @return {Boolean} True if the domain has *any* SPF records, false otherwise.
    */
-  hasRecords: function(done) {
+  hasRecords(done) {
     dns.resolveTxt(this._domain, function(err, vals) {
       if (err) {
         // If the domain isn't registered, if most certainly doesn't have SPF
@@ -28,15 +28,18 @@ Object.assign(SPFValidator.prototype, {
         else if (/queryTxt ENODATA/.test(err)) done(null, false);
         else done(err);
       } else {
-        done(null, _.chain(vals)
-          .flatten()
-          .some(function(record) {
-            return record.indexOf('v=spf') > -1;
-          })
-          .value());
+        done(
+          null,
+          _.chain(vals)
+            .flatten()
+            .some(function(record) {
+              return record.indexOf('v=spf') > -1;
+            })
+            .value()
+        );
       }
     });
-  }
+  },
 });
 
 module.exports = SPFValidator;
