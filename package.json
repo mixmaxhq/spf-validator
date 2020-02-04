@@ -4,8 +4,9 @@
   "description": "Used to validate SPF records",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint ."
+    "ci": "npm run lint && npm test",
+    "lint": "eslint .",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
